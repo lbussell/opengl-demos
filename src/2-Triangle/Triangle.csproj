@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Silk.NET.Input" Version="$(SilkNetVersion)" />
+    <PackageReference Include="Silk.NET.OpenGL" Version="$(SilkNetVersion)" />
+    <PackageReference Include="Silk.NET.Windowing" Version="$(SilkNetVersion)" />
+  </ItemGroup>
+
+</Project>
