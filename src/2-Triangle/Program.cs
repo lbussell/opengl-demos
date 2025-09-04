@@ -47,6 +47,7 @@ var windowOptions = WindowOptions.Default;
 var window = Window.Create(windowOptions);
 
 GL? gl = null;
+Vector2D<int> viewport = default;
 LinkedShaderProgram shaderProgram = default;
 BufferObject<float>? vbo = null;
 VertexArrayObject<float>? vao = null;
@@ -86,6 +87,9 @@ window.Render += (double deltaTime) =>
         throw new Exception("Not initialized");
     }
 
+    viewport = window.FramebufferSize;
+    gl.Viewport(viewport);
+
     gl.Clear(ClearBufferMask.ColorBufferBit);
     gl.UseProgram(shaderProgram.Handle);
     vao.Bind();
@@ -94,6 +98,7 @@ window.Render += (double deltaTime) =>
 
 window.FramebufferResize += (Vector2D<int> newSize) =>
 {
+    gl?.Viewport(newSize);
 };
 
 window.Run();
