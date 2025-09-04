@@ -2,5 +2,6 @@
   <Project Path="src/1-Window/Window.csproj" />
   <Project Path="src/2-Triangle/Triangle.csproj" />
   <Project Path="src/3-Quad/Quad.csproj" />
+  <Project Path="src/4-FragmentShading/FragmentShading.csproj" />
   <Project Path="src/Common/Common.csproj" />
 </Solution>
