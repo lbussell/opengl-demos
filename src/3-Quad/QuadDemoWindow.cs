@@ -6,7 +6,6 @@ using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System.Drawing;
 using Common;
-using Silk.NET.Core;
 
 namespace Quad;
 
