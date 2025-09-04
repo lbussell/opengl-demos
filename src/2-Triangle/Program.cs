@@ -18,7 +18,7 @@ const string VertexShaderSource =
 
     void main()
     {
-        // gl_Position is a built-int GLSL output variable. The value
+        // gl_Position is a built-in GLSL output variable. The value
         // we store here will be used by OpenGL to position the vertex.
         gl_Position = vec4(position, 1.0);
     }
@@ -48,7 +48,7 @@ var window = Window.Create(windowOptions);
 
 GL? gl = null;
 Vector2D<int> viewport = default;
-LinkedShaderProgram shaderProgram = default;
+LinkedShaderProgram? shaderProgram = null;
 BufferObject<float>? vbo = null;
 VertexArrayObject<float>? vao = null;
 
@@ -82,7 +82,7 @@ window.Update += (double deltaTime) =>
 
 window.Render += (double deltaTime) =>
 {
-    if (gl is null || vao is null)
+    if (gl is null || vao is null || shaderProgram is null)
     {
         throw new Exception("Not initialized");
     }
